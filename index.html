@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .heart{
+            width: 200px;
+            height: 200px;
+            margin:100px auto;
+            position: relative;
+            animation-name:shake;
+            animation-duration:1s;
+            animation-iteration-count: infinite;
+        }
+        .heart div{
+            width: 100%;
+            height: 100%;
+            border: 1px solid red;
+            position: absolute;
+            background-color: red;
+            animation-name:shadow;
+            animation-duration:1s;
+            animation-iteration-count: infinite;
+        }
+        .topLeft,.topRight{
+            border-radius:100px 100px 0 0;
+        }
+        .topLeft{
+            transform:translate(-50px,0) rotate(-45deg);
+        }
+        .topRight{
+            transform:translate(50px,0) rotate(45deg);
+        }
+        .bottom{
+            transform:translate(0,63px) rotate(45deg) scale(.9,.9);
+        }
+        @keyframes shake{
+            from{
+                transform:scale(.9,.9);
+            }
+            to{
+                transform:scale(1.1,1.1);
+            }
+        }
+        @keyframes shadow{
+            from{
+
+            }
+            to{
+               box-shadow:0 0 50px red;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="heart">
+    <div class="topLeft"></div>
+    <div class="topRight"></div>
+    <div class="bottom"></div>
+</div>
+</body>
+</html>
