@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style>
+	.showBox{
+		height:50px;
+		width:350px;
+		line-height:50px;
+		text-align:center;
+		background-color:green;
+		margin:100px 100px 10px 100px;
+	}
+	.hideBox{
+		height:100px;
+		width:350px;
+		line-height:100px;
+		text-align:center;
+		background-color:red;
+		margin-left:100px;
+		display:none;
+	}
+    </style>
+    <body>
+    	<div class="showBox">
+    		<span>显示的盒子</span>
+    		<input id="show" type="radio" value="show" name="check" >显示
+    		<input id="hide" type="radio" value="hide" name="check" checked>隐藏
+    	</div>
+    	<div class="hideBox">隐藏的盒子</div>
+    </body>
+    <script src="./jquery/jquery.js"></script>
+    <script>
+    	window.onload=function(){
+    		var ipt = document.getElementsByTagName("input");
+    		var showOrHide = document.getElementsByClassName('hideBox')[0];
+    		var isChecked = false;
+	    	for(var i=0; i<ipt.length; i ++){
+	    		ipt[i].onclick=function(){
+	    			console.log(this);
+	    			showOrHide.style.display = this.value=='show'?'block':'none';
+	    			isChecked = ipt[0].id;
+	    			$.ajax({
+	    				url:"./server.js",
+	    				data:{
+	    					id:"nihao"
+	    				},
+	    				success:function(res){
+	    					console.log(res);
+	    				}
+	    			})
+	    		}  
+	        }
+    	}
+    </script>
+</html>
