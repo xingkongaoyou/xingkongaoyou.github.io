@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .box {
+            margin:100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <button id="btn" style="width:46px;height:25px;"></button>
+    </div>
+</body>
+<script>
+    var btn = document.getElementById("btn");
+        var count = 5;
+        var timer = null;
+        function print() {
+            clearTimeout(timer);
+            btn.innerHTML= --count;
+            btn.disabled=true;
+　　　　　　　　timer = setTimeout(function () {
+                    print();
+                }, 1000);
+　　　　　　　　
+            if(count == 0) {
+                clearTimeout(timer);
+                btn.innerHTML= "确定";
+                btn.disabled = false;
+            }
+        } 
+        timer = setTimeout(function () { print(); }, 1000);
+</script>
+</html>
