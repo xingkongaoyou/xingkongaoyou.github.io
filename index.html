@@ -102,14 +102,7 @@
            text-align: center;
             margin-top:10px;
             color:yellowgreen;
-            opacity:.5; 
-            animation: gundong 15s linear 0s infinite alternate;
-            /* Firefox: */
-            -moz-animation: gundong 15s linear 0s infinite alternate;
-            /* Safari 和 Chrome: */
-            -webkit-animation: gundong 15s linear 0s infinite alternate;
-            /* Opera: */
-            -o-animation: gundong 15s linear 0s infinite alternate;
+            opacity:.5;
         }
         i {
             color:#fff;
@@ -209,7 +202,6 @@
         .rolling span {
             position:absolute;
             height:24px;
-            width:100px;
             color:#fff;
             animation: gundong 15s linear 0s infinite alternate;
             /* Firefox: */
@@ -347,7 +339,7 @@
         </ul>
     </div>
     <div class="rolling">
-        <span>滚动更新信息</span>
+        <span class="rolling-inner">滚动更新信息</span>
     </div>
     <div class="content">
         <div class="list list-left">
@@ -380,13 +372,17 @@
     </div> 
 </body>
 <script src="./asses/jquery.js"></script>
+<script src="./data/rollingData.js"></script>
 <script>
     $(function(){
+        
         $(".list").hover(function(){
             $(this).children("ul").slideDown(200);
         },function(){
             $(this).children("ul").slideUp(100);
         })
+
+        $(".rolling-inner").html(rollingData);
     })
 </script>
 </html>
