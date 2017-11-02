@@ -82,6 +82,9 @@
             height:100%;
             color:#fff;
         }
+        .nav ul li a:hover {
+            color:aqua;
+        }
         h1 {
             text-align: center;
             color:red;
@@ -109,6 +112,70 @@
             background-image: url("./imgs/img2.jpg");
             background-repeat:no-repeat;
             background-size:100% 100%;
+        }
+        .content {
+            position:relative;
+        }
+        .content .list-left {
+            position:absolute;
+            top:0;
+            left:30px;
+            opacity: .8;
+            color:blueviolet;
+            cursor:pointer;
+            height:100%; 
+            width:100px;
+        }
+        .content .list-left:hover {
+            color:red;
+        }
+        .content .list-right {
+            position:absolute;
+            top:0;
+            right:30px;
+            opacity: .8;
+            color:blueviolet;
+            cursor: pointer;
+            height:100%;
+            width:100px;
+            padding-left:30px;
+        }
+        .content .list-right:hover {
+            color:red;
+        }
+        .list-left span {
+            display:block;
+        }
+        .list-right span {
+            display:block;
+        }
+        .list-left ul {
+            position:absolute;
+            top:30px;
+            left:10px;
+            display: none;
+        }
+        .list-left ul li a{
+            display:inline-block;
+            line-height:30px;
+            color:bisque;
+        }
+        .list-left ul li a:hover {
+            color:greenyellow;
+        }
+        .list-right ul {
+            position:absolute;
+            top:30px;
+            right:40px;
+            display:none; 
+        }
+        .list-right ul li a{
+            display:inline-block;
+            line-height:30px;
+            color:bisque;
+        }
+        .list-right ul li a:hover {
+            color:greenyellow;
         }
     </style>
 </head>
@@ -138,10 +205,44 @@
             </li>
         </ul>
     </div>
-     <div class="heart">
-        <div class="topLeft"></div>
-        <div class="topRight"></div>
-        <div class="bottom"></div>
+    <div class="content">
+        <div class="list list-left">
+            <span>我的博客</span>
+            <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">Advertising</a></li>
+            </ul>
+        </div>
+        <div class="heart">
+            <div class="topLeft"></div>
+            <div class="topRight"></div>
+            <div class="bottom"></div>
+        </div>
+        <div class="list list-right">
+            <span>我的作品</span>
+            <ul>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Company</a></li>
+                <li><a href="#">Authors</a></li>
+                <li><a href="#">Advertising</a></li>
+            </ul>
+        </div>
     </div> 
 </body>
+<script src="./asses/jquery.js"></script>
+<script>
+    $(function(){
+        $(".list").hover(function(){
+            $(this).children("ul").slideDown(200);
+        },function(){
+            $(this).children("ul").slideUp(100);
+        })
+    })
+</script>
 </html>
