@@ -6,13 +6,12 @@
           <title></title>
           <style type="text/css">
           body {
-               perspective: 1000px;
-               background-color: #eee;
+                    perspective: 1000px;
           }
           
           .items {
-                    width: 400px;
-                    height: 400px;
+                    width: 200px;
+                    height: 200px;
                     margin: 100px auto;
                     position: relative;
                     opacity: .8;
@@ -20,9 +19,7 @@
                     transform-style: preserve-3d;
           }
           
-          .items:hover {
-                    transform: rotateY(45deg) rotateX(45deg) rotateZ(45deg);
-          }
+          
           
           .item {
                     position: absolute;
@@ -34,49 +31,44 @@
           }
           
           .item:nth-child(1) {
-                    background: url('../imgs/play.jpg') no-repeat center/cover;
-                    transform: translateZ(100px);
+                    background: url('../imgs/1.jpg') no-repeat center/cover;
+                    transform:  rotateY(0deg)  translateZ(300px);
           }
           
           .item:nth-child(2) {
                     /* background: blue; */
-                    background: url('../imgs/play.jpg') no-repeat center/cover;
-                    transform: rotateY(180deg) translateZ(100px);
+                    background: url('../imgs/2.jpg') no-repeat center/cover;
+                    transform: rotateY(60deg) translateZ(300px);
           }
           
           .item:nth-child(3) {
                     /* background: yellow; */
-                    background: url('../imgs/play.jpg') no-repeat center/cover;
-                    transform: rotateY(-90deg) translateZ(100px);
+                    background: url('../imgs/3.jpg') no-repeat center/cover;
+                    transform: rotateY(120deg) translateZ(300px);
           }
           
           .item:nth-child(4) {
                     /* background: green; */
-                    background: url('../imgs/play.jpg') no-repeat center/cover;
-                    transform: rotateY(90deg) translateZ(100px);
+                    background: url('../imgs/4.jpg') no-repeat center/cover;
+                    transform: rotateY(180deg) translateZ(300px);
           }
           
           .item:nth-child(5) {
                     /* background: green; */
-                    background: url('../imgs/play.jpg') no-repeat center/cover;
-                    transform: rotateX(90deg) translateZ(100px);
+                    background: url('../imgs/5.jpg') no-repeat center/cover;
+                    transform: rotateY(240deg) translateZ(300px);
           }
           
           .item:nth-child(6) {
                     /* background: green; */
-                    background: url('../imgs/play.jpg') no-repeat center/cover;
-                    transform: rotateX(-90deg) translateZ(100px);
-          }
-
-          .tips {
-               text-align: center;
+                    background: url('../imgs/6.jpg') no-repeat center/cover;
+                    transform: rotateY(300deg) translateZ(300px);
           }
 
           </style>
 </head>
 
 <body>
-     <div class="tips">时间都去哪了！</div>
      <div class='items'>
           <div class='item'></div>
           <div class='item'></div>
@@ -86,5 +78,14 @@
           <div class='item'></div>
      </div>
 </body>
+<script src="../assets/jquery.js"></script>
+<script>
+     var deg = 0;
+     var timer = setInterval(function(){
+          deg = deg + 1;
+          $(".items").css("transform","rotateY("+deg+"deg)");
+     }, 60);
+     
+</script>
 
 </html>

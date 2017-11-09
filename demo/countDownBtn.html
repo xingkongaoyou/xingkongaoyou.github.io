@@ -6,23 +6,86 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
+        body {
+            background: gray;
+        }
+        .tip {
+            text-align: center;
+            margin:100px 0 0 0;
+        }
         .box {
-            margin:100px;
+            width:100%;
+        }
+        #btn {
+            display:block;
+            margin:10px auto;
+            width:170px;
+            height:55px;
+            background-color: #1D82FE;
+            color:#fff;
+            font-size:30px;
+            border-radius: 10px;
+        }
+        .photoFrame {
+            margin: 100px auto;
+            width: 200px;
+            height: 200px;
+            border: 50px solid #0094ff;
+            border-image-source:url('../imgs/photoFrame.jpg');
+            border-image-slice: 278 181;
+            background: url('../imgs/four.JPG') no-repeat center /200px 200px;
+            display:none;
+        }
+
+        .picBox {
+            width: 623px;
+            height: 417px;
+            margin: 0 auto;
+            background: url('../imgs/bg1.png')no-repeat top left/312px 209px, url('../imgs/bg2.png')no-repeat top right/311px 209px, url('../imgs/bg4.png')no-repeat bottom left/311px 208px, url('../imgs/bg3.png')no-repeat bottom right/312px 208px, url('../imgs/4.jpg')no-repeat center/400px 290px;
+          }
+        .picBox:hover {
+            background: url('../imgs/bg1.png')no-repeat top left/312px 209px, url('../imgs/bg2.png')no-repeat top right/311px 209px, url('../imgs/bg4.png')no-repeat bottom left/311px 208px, url('../imgs/bg3.png')no-repeat bottom right/312px 208px, url('../imgs/3.jpg')no-repeat center/400px 290px;
+          }
+        .PicBoxContent {
+            text-align: center;
+        }
+        .tipsPic {
+            font-size: 50px;
+            color: gray;
+            text-shadow: 2px 2px black, -2px -2px white;
         }
     </style>
 </head>
 <body>
+    <div class="tip"><span style="color:red;">*</span><span class="tipContent">耐心等待10秒，点击按钮</span></div>
     <div class="box">
-        <button id="btn" style="width:46px;height:25px;"></button>
+        <button id="btn"></button>
+    </div>
+    <div class="photoFrame">
+        
+    </div>
+    <div class="BoxPf">
+        <div class="picBox">
+        
+        </div>
+        <div class="PicBoxContent">
+            <span class="tipsPic">请将鼠标放在相框上！！！</span>
+        </div>
     </div>
 </body>
 <script>
     var btn = document.getElementById("btn");
-        var count = 5;
+    var photoFrame = document.getElementsByClassName("photoFrame")[0];
+    var tipContent = document.getElementsByClassName("tipContent")[0];
+    var tip = document.getElementsByClassName('tip')[0];
+    var picBox = document.getElementsByClassName("picBox")[0];
+    var BoxPf = document.getElementsByClassName("BoxPf")[0]; 
+        var count = 10;
         var timer = null;
         function print() {
             clearTimeout(timer);
             btn.innerHTML= --count;
+            tipContent.innerHTML = "耐心等待"+count+"秒，点击按钮";
             btn.disabled=true;
 　　　　　　　　timer = setTimeout(function () {
                     print();
@@ -30,10 +93,20 @@
 　　　　　　　　
             if(count == 0) {
                 clearTimeout(timer);
-                btn.innerHTML= "Hello";
+                btn.innerHTML= "照片";
                 btn.disabled = false;
+                photoFrame.style.display = "none";
+                BoxPf.style.display = "block";
+                tip.innerHTML = "";
             }
         } 
         timer = setTimeout(function () { print(); }, 1000);
+        btn.onclick=function(){
+            BoxPf.style.display = "none";
+            count = 10;
+            photoFrame.style.display = "block";
+            btn.disabled = false;
+            print();
+        }
 </script>
 </html>

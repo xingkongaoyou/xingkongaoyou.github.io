@@ -6,7 +6,17 @@
     <link rel="stylesheet" href="./css/base.css">
 </head>
 <body>
-    <h1>♥</h1>
+    <div class="top">
+         <div class='items'>
+              <div class='item'></div>
+              <div class='item'></div>
+              <div class='item'></div>
+              <div class='item'></div>
+              <div class='item'></div>
+              <div class='item'></div>
+         </div>
+        <h1>♥ </h1>
+    </div>
     <h2>HARVEST SEASON</h2>
     <div class="nav">
         <ul>
@@ -50,24 +60,16 @@
             <div class="topRight"></div>
             <div class="bottom"></div>
         </div>
-        <div class="list list-right">
-            <span>我的学习</span>
-            <ul>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Authors</a></li>
-                <li><a href="#">Advertising</a></li>
-                <li><a href="#">Company</a></li>
-                <li><a href="#">Authors</a></li>
-                <li><a href="#">Advertising</a></li>
-            </ul>
+        <div class="list">
+            
         </div>
-    </div> 
+    </div>
 </body>
 <script src="./assets/jquery.js"></script>
 <script src="./data/rollingData.js"></script>
 <script>
     $(function(){
-        
+
         $(".list").hover(function(){
             $(this).children("ul").slideDown(200);
         },function(){
@@ -75,6 +77,14 @@
         })
 
         $(".rolling-inner").html(rollingData);
+    })
+
+    $(function(){
+        var deg = 0;
+         var timer = setInterval(function(){
+            deg = deg + 1;
+            $(".items").css("transform","rotateY("+deg+"deg)");
+         }, 60);
     })
 </script>
 </html>
