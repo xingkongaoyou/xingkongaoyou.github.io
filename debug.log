@@ -1,0 +1,9 @@
+[1109/112957.228:ERROR:process_reader_win.cc(242)] ReadMemory at 0x8b0000 of 64 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
+[1109/112957.228:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\chrome.exe
+[1109/112957.228:ERROR:process_reader_win.cc(242)] ReadMemory at 0x6d300000 of 64 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
+[1109/112957.228:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\WINDOWS\SYSTEM32\DWrite.dll
+[1109/112957.228:ERROR:process_reader_win.cc(242)] ReadMemory at 0x65c30000 of 64 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
+[1109/112957.228:WARNING:pe_image_reader.cc(281)] could not read dos header from C:\Program Files (x86)\Google\Chrome\Application\61.0.3163.100\chrome_child.dll
+[1109/112957.228:ERROR:process_reader_win.cc(242)] ReadMemory at 0x4f5000 of 45056 bytes failed: 仅完成部分的 ReadProcessMemory 或 WriteProcessMemory 请求。 (0x12B)
+[1109/112957.228:ERROR:crash_report_exception_handler.cc(116)] WriteEverything failed
+[1109/112957.243:ERROR:scoped_process_suspend.cc(39)] NtResumeProcess: 已尝试访问正在退出的过程。  (0xc000010a)
