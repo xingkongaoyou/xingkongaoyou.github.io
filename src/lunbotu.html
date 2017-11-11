@@ -1,0 +1,42 @@
+ <html>
+    <head>
+        <title>JS 实现3D立体效果的图片幻灯切换</title>
+        <meta charset="utf-8" />
+        <link rel="stylesheet" href="../css/lunbotu.css">
+    </head>
+
+    <body>
+        <h1>旋转的轮播图</h1>
+        <div id="slider" class="slide-wp">
+            <ul>
+                <li>
+                    <a href="https://xingkongaoyou.github.io/" target="_blank"><img src="../imgs/img1.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="https://xingkongaoyou.github.io/" target="_blank"><img src="../imgs/img2.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="https://xingkongaoyou.github.io/" target="_blank"><img src="../imgs/img3.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="https://xingkongaoyou.github.io/" target="_blank"><img src="../imgs/img4.jpg" alt="" /></a>
+                </li>
+                <li>
+                    <a href="https://xingkongaoyou.github.io/" target="_blank"><img src="../imgs/img5.jpg" alt="" /></a>
+                </li>
+            </ul>
+        </div>
+        <div class="nav-wp">
+            <ul id="nav" class="nav">
+                <li onclick="mySlider.pos(0)">●</li>
+                <li onclick="mySlider.pos(1)">●</li>
+                <li onclick="mySlider.pos(2)">●</li>
+                <li onclick="mySlider.pos(3)">●</li>
+                <li onclick="mySlider.pos(4)">●</li>
+            </ul>
+            <a class="next" onclick="mySlider.move()">next</a>
+        </div>
+        <script src="../js/lunbotu.js"></script>
+    </body>
+
+</html>

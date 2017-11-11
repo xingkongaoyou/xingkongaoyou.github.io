@@ -1,0 +1,1 @@
+var deg=0,timer=setInterval(function(){deg+=1,$(".items").css("transform","rotateY("+deg+"deg)")},60);

@@ -1,0 +1,1 @@
+$("#ipt").bind("input propertychange",function(){$(".showMsg").html($("#ipt").val()),"nihao"==$(this).val()?($("#result").slideDown(),setTimeout(function(){$("#result").slideUp()},1e3)):"hello"==$(this).val()?$("#result").fadeIn("slow"):$("#result").hide()});

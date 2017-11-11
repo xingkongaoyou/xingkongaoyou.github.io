@@ -21,22 +21,22 @@
     <div class="nav">
         <ul>
             <li>
-                <a href="./3dPic/index.html"><i>♥</i> 3d环视照片</a>
+                <a href="./src/3dPic.html"><i>♥</i> 3d环视照片</a>
             </li>
             <li>
-                <a href="./demo/bindingTwoWay.html"><i>♥</i> 双向绑定</a>
+                <a href="./src/bindingTwoWay.html"><i>♥</i> 双向绑定</a>
             </li>
             <li>
-                <a href="./demo/countDownBtn.html"><i>♥</i> 倒计时按钮</a>
+                <a href="./src/countDownBtn.html"><i>♥</i> 倒计时按钮</a>
             </li>
             <li>
-                <a href="./demo/lunbotu.html"><i>♥</i> 3d轮播图</a>
+                <a href="./src/lunbotu.html"><i>♥</i> 3d轮播图</a>
             </li>
             <li>
-                <a href="./demo/showHideTest.html"><i>♥</i> 单选显示隐藏按钮</a>
+                <a href="./src/showHideTest.html"><i>♥</i> 时间都去哪了</a>
             </li>
             <li>
-                <a href="./demo/sixPic.html"><i>♥</i> 自制轮播图</a>
+                <a href="./src/sixPic.html"><i>♥</i> 自制轮播图</a>
             </li>
         </ul>
     </div>
@@ -67,24 +67,5 @@
 </body>
 <script src="./assets/jquery.js"></script>
 <script src="./data/rollingData.js"></script>
-<script>
-    $(function(){
-
-        $(".list").hover(function(){
-            $(this).children("ul").slideDown(200);
-        },function(){
-            $(this).children("ul").slideUp(100);
-        })
-
-        $(".rolling-inner").html(rollingData);
-    })
-
-    $(function(){
-        var deg = 0;
-         var timer = setInterval(function(){
-            deg = deg + 1;
-            $(".items").css("transform","rotateY("+deg+"deg)");
-         }, 60);
-    })
-</script>
+<script src="./js/inde.js"></script>
 </html>

@@ -1,0 +1,1 @@
+$(function(){$(".list").hover(function(){$(this).children("ul").slideDown(200)},function(){$(this).children("ul").slideUp(100)}),$(".rolling-inner").html(rollingData)}),$(function(){var n=0;setInterval(function(){n+=1,$(".items").css("transform","rotateY("+n+"deg)")},60)});
